@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa y Calzado</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <h1>Tienda Online</h1>
+    </header>
+    <main class="container">
+        <section id="productos" class="mb-4">
+            <h2>Productos Disponibles</h2>
+            <div class="row" id="lista-productos"></div>
+        </section>
+        <section id="carrito" class="mb-4" style="display: none;">
+            <h2>Carrito de Compras</h2>
+            <ul id="lista-carrito" class="list-group">
+                <!-- Aquí se mostrará el carrito -->
+            </ul>
+            <p id="total-compra">Total: $0</p>
+            <button id="vaciar-carrito" class="btn btn-danger">Vaciar Carrito</button>
+        </section>
+    </main>
+    
+    <script src="/js/script.js"></script>
+</body>
+</html>
