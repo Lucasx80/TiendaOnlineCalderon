@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function agregarAlCarrito(index) {
         const producto = productos[index];
         carrito.push(producto);
+        guardarCarritoEnLocalStorage();
         mostrarCarrito();
     }
 
@@ -92,17 +93,29 @@ document.addEventListener("DOMContentLoaded", function() {
     // Función para eliminar un producto del carrito
     function eliminarDelCarrito(index) {
         carrito.splice(index, 1);
+        guardarCarritoEnLocalStorage();
         mostrarCarrito();
     }
 
-    // Función para vaciar el carrito
-    function vaciarCarrito() {
-        carrito.length = 0;
-        mostrarCarrito();
+    // Función para guardar el carrito en el localStorage
+    function guardarCarritoEnLocalStorage() {
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+    }
+
+    // Función para obtener el carrito del localStorage al cargar la página
+    function obtenerCarritoDelLocalStorage() {
+        const carritoGuardado = localStorage.getItem("carrito");
+        if (carritoGuardado) {
+            carrito = JSON.parse(carritoGuardado);
+            mostrarCarrito();
+        }
     }
 
     // Mostrar los productos al cargar la página
     mostrarProductos();
+
+    // Obtener el carrito del localStorage al cargar la página
+    obtenerCarritoDelLocalStorage();
 
     // Evento para vaciar el carrito
     document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrito);
