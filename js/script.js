@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const containerProductos = document.getElementById("lista-productos");
     const containerCarrito = document.getElementById("lista-carrito");
-    const carrito = [];
+    let carrito = [];
 
     // Función para mostrar los productos en el HTML
     function mostrarProductos() {
@@ -95,7 +95,15 @@ document.addEventListener("DOMContentLoaded", function() {
         carrito.splice(index, 1);
         guardarCarritoEnLocalStorage();
         mostrarCarrito();
-    }
+        
+    }   
+    
+    // Función para vaciar el carrito
+    function vaciarCarrito() {
+        carrito = [];
+        guardarCarritoEnLocalStorage();
+        mostrarCarrito();
+        }
 
     // Función para guardar el carrito en el localStorage
     function guardarCarritoEnLocalStorage() {
@@ -118,7 +126,9 @@ document.addEventListener("DOMContentLoaded", function() {
     obtenerCarritoDelLocalStorage();
 
     // Evento para vaciar el carrito
-    document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrito);
+    document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrito);    
+
+
 });
 
 

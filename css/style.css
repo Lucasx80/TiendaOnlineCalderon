@@ -6,11 +6,13 @@ body {
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    
+    margin: 20px;
     padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
+
+
 
 header {
     background-color: #343a40;
@@ -62,6 +64,13 @@ header h1 {
 
 .btn-danger {
     margin-left: 10px;
+}
+
+/* Estilos para el total de la compra */
+.total {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 10px;
 }
 
 #total-compra {
